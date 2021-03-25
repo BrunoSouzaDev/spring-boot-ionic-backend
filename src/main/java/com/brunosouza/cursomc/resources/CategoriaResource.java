@@ -46,4 +46,10 @@ public class CategoriaResource {
 		return ResponseEntity.noContent().build();
 	
 	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+	public ResponseEntity<Categoria> delete(@PathVariable Integer id) throws ObjectNotFoundException {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 }
